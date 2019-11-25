@@ -32,7 +32,7 @@ Bread pan : 기본적인 웹서비스를 간단하게 만드는 프로젝트 틀
 * 아래의 4개 계층으로 나눠지게 된다. 
     - EBR(Enterprise Business Rules): 실제 Business logic에서 사용하는 데이터들을 표현 
     - ABR(Application Business Rules): 실제 Business logic의 행위를 이곳에 표현 
-    - Interface adapter: 들어오는 입력을 ABR에 전달하고 ABR의 결과를 외부 Framework에 맞춰서 전달
+    - IA(Interface Adapter): 들어오는 입력을 ABR에 전달하고 ABR의 결과를 외부 Framework에 맞춰서 전달
     - Framework : 실제 사용자 입력을 받고 출력을 하는 inteface
 * Back-end / Front-end의 경계는? 
    - Front-end: Framework / Interface adapter의 한 축으로 제일 변화가 많은 부분이 된다.
@@ -52,11 +52,8 @@ $ make run  # 전체 실행
 $ make run-fe  # Front-end 실행 
 ```
 
-
 ```bash
 $ make build-fe # Front-end build
 ```
-
-```bash
 
 
