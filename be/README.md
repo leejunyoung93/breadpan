@@ -25,5 +25,5 @@ env FLASK_APP=apps/flask/main.py flask run
 Test
 ---
 ```shell
-
+python -m unittest discover test
 ```

@@ -8,12 +8,6 @@
 from http import HTTPStatus
 from flask_restful import reqparse, abort, Api, Resource
 
-TODOS = {
-    'todo1': {'task': 'build an API'},
-    'todo2': {'task': '?????'},
-    'todo3': {'task': 'profit!'},
-}
-
 
 def abort_if_todo_doesnt_exist(todo_id):
     if todo_id not in TODOS:

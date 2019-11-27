@@ -1,5 +1,5 @@
 
-from be.pkg.usecase import IUsecaseInputPort, IUsecaseOuputPort, IUseCaseInteractor
+from be.pkg.usecase import IUsecaseInputPort, IUsecaseOutputPort, IUseCaseInteractor
 from be.pkg.interface import IController, IPresentor
 
 

@@ -15,15 +15,6 @@ class IUsecaseInputPort:
             self.data[key] = value
 
 
-class IUseCaseInteractor(IUsecaseInputPort):
-    """IUseCaseInteractor
-
-    """
-
-    def operate(self) -> IUsecaseOutputPort:
-        return None
-
-
 class IUsecaseOutputPort(metaclass=ABCMeta):
     """Interface of use case input port.
 
@@ -33,3 +24,12 @@ class IUsecaseOutputPort(metaclass=ABCMeta):
     def output(cls, **kwargs):
         for key, value in kwargs.items():
             self.data[key] = value
+
+
+class IUseCaseInteractor(IUsecaseInputPort):
+    """IUseCaseInteractor
+
+    """
+
+    def operate(self) -> IUsecaseOutputPort:
+        return None
