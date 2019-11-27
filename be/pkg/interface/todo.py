@@ -1,8 +1,8 @@
 
-from be.pkg.interface import IController
-from be.pkg.usecase.todo import ToDoCreateInteractor
-from be.pkg.usecase.todo import ToDoReadInteractor
-from be.pkg.usecase.todo import ToDoDeleteInteractor
+from pkg.interface import IController
+from pkg.usecase.todo import ToDoCreateInteractor
+from pkg.usecase.todo import ToDoReadInteractor
+from pkg.usecase.todo import ToDoDeleteInteractor
 
 
 class ToDoController(IController):

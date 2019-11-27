@@ -1,6 +1,6 @@
+#!/usr/bin/env python
 import unittest
-from be.pkg.interface.todo import ToDoController
-
+from pkg.interface.todo import ToDoController
 
 class TestTodoApp(unittest.TestCase):
 

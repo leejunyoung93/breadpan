@@ -1,6 +1,6 @@
 
-from be.pkg.usecase import IUsecaseInputPort, IUsecaseOutputPort, IUseCaseInteractor
-from be.pkg.interface import IController, IPresentor
+from pkg.usecase import IUsecaseInputPort, IUsecaseOutputPort, IUseCaseInteractor
+from pkg.interface import IController, IPresentor
 
 
 TODOS = {
