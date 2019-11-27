@@ -27,3 +27,10 @@ Test
 ```shell
 python -m unittest discover test
 ```
+
+
+Clean up
+-----
+```shell
+find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+```
