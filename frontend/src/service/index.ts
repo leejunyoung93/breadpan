@@ -1,4 +1,4 @@
-import Ajax from "ajax";
+import Ajax from "./ajax";
 // import { getToken } from "others/token";
 
 class ResourceService extends Ajax {
