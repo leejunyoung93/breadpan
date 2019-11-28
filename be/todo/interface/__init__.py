@@ -1,9 +1,6 @@
-
-from be.pkg.interface import IController
-from be.pkg.usecase import IUsecaseOutputPort, IUsecaseInteractor
-from be.pkg.usecase.todo import ToDoCreateInteractor
-from be.pkg.usecase.todo import ToDoReadInteractor
-from be.pkg.usecase.todo import ToDoDeleteInteractor
+from be.breadpan.interface import IController
+from be.breadpan.usecase import IUsecaseOutputPort, IUsecaseInteractor
+from be.todo.usecase import ToDoCreateInteractor, ToDoReadInteractor, ToDoDeleteInteractor
 
 
 class ToDoPresenter(IUsecaseOutputPort):
