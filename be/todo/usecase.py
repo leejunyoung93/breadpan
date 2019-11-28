@@ -1,5 +1,5 @@
 
-from be.breadpan.usecase import IUsecaseOutputPort, IUsecaseInteractor
+from breadpan.usecase import IUsecaseOutputPort, IUsecaseInteractor
 
 TODOS = {
     'todo1': {'task': 'build an API'},

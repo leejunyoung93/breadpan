@@ -1,6 +1,6 @@
-from be.breadpan.interface import IController
-from be.breadpan.usecase import IUsecaseOutputPort, IUsecaseInteractor
-from be.todo.usecase import ToDoCreateInteractor, ToDoReadInteractor, ToDoDeleteInteractor
+from breadpan.interface import IController
+from breadpan.usecase import IUsecaseOutputPort, IUsecaseInteractor
+from todo.usecase import ToDoCreateInteractor, ToDoReadInteractor, ToDoDeleteInteractor
 
 
 class ToDoPresenter(IUsecaseOutputPort):

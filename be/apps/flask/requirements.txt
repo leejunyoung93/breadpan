@@ -1,2 +1,2 @@
 Flask == 1.1.1
-flask-restful == 0.2.12
+flask-restful == 0.3.7

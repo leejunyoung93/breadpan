@@ -6,7 +6,7 @@
 """
 
 from http import HTTPStatus
-from flask_restful import reqparse, abort, Api, Resource
+from flask_restful import reqparse, abort, Resource
 
 
 def abort_if_todo_doesnt_exist(todo_id):

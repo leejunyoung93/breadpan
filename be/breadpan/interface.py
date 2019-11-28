@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from be.breadpan.usecase import IUsecaseOutputPort
+from breadpan.usecase import IUsecaseOutputPort
 
 
 class IController(metaclass=ABCMeta):

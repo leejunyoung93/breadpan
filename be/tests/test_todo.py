@@ -1,20 +1,13 @@
 #!/usr/bin/env python
+from .context import todo
 import unittest
-
-# Add parent path to import back-end pkg modules. 
-import os,sys,inspect
-current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parent_dir = os.path.dirname(current_dir)
-sys.path.insert(0, parent_dir) 
-
-from be.todo.interface import ToDoController
 
 class TestTodoApp(unittest.TestCase):
 
     TodoCtrl = None
 
     def setUp(self):
-        self.TodoCtrl = ToDoController()
+        self.TodoCtrl = todo.ToDoController()
 
     def tearDown(self):
         del self.TodoCtrl
