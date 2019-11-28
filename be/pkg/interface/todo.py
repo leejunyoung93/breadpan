@@ -9,18 +9,18 @@ from be.pkg.usecase.todo import ToDoDeleteInteractor
 class ToDoPresenter(IUsecaseOutputPort):
     def __init__(self, **kwargs):
         super(IUsecaseOutputPort,self).__init__(**kwargs)
-    # To-Do: Do any operation additionally.
+        # To-Do: Do any operation additionally.
 
 
 class ToDoController(IController):
-    def create(self, task_id, contents):
+    def create(self, todo_id, contents):
         i = ToDoCreateInteractor()
-        i.input(task_id=task_id, contents=contents)
+        i.input(todo_id=todo_id, contents=contents)
         return i.operate()
 
-    def read(self,  **kwargs):
+    def read(self, task_id):
         i = ToDoReadInteractor()
-        i.input(kwargs)
+        i.input(task_id=task_id)
         return i.operate()
 
     def delete(self,  **kwargs):

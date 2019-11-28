@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import unittest
 
-# Add parent path to import pkg modules. 
+# Add parent path to import back-end pkg modules. 
 import os,sys,inspect
 current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
@@ -20,14 +20,20 @@ class TestTodoApp(unittest.TestCase):
         del self.TodoCtrl
 
     def test_create(self):
-        
-        task_id = "task312"
-        contents = "New work"
-        output = self.TodoCtrl.create(task_id, contents)
+        todo_id = "task312"
+        contents = {'task': 'myid'}
+        output = self.TodoCtrl.create(todo_id, contents)
+        t = output.data["todo"]
+        self.assertEqual( t , {todo_id:contents} )
 
-        t = output.data["task"]
-        self.assertEqual( t , {task_id:contents} )
+    def test_read(self):        
+        output = self.TodoCtrl.read(task_id='todo1')
+        t = output.data["todo"]
+        self.assertEqual( t, { 'todo1': {'task': 'build an API'} } )
         
+
+    def test_delete(self):
+        pass    
 
 
 

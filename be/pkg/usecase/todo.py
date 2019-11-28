@@ -16,20 +16,23 @@ class ToDoOutputPort(IUsecaseOutputPort):
 class ToDoCreateInteractor(IUsecaseInteractor):
     def operate(self):        
         # Get id from the controller's data. 
-        task_id = self.data["task_id"]
+        todo_id = self.data["todo_id"]
         contents = self.data["contents"]
 
         # Store the data. 
-        TODOS[task_id] = contents
+        TODOS[todo_id] = contents
 
         # Link to output port
-        return ToDoOutputPort(task={task_id:TODOS[task_id]})
+        return ToDoOutputPort(todo={todo_id:TODOS[todo_id]})
 
 
 class ToDoReadInteractor(IUsecaseInteractor):
     def operate(self):
-        id = self.data["to_do_id"]
-        return ToDoOutputPort(self)
+        # Get task ID
+        todo_id = self.data["task_id"]
+
+        # Link to output port
+        return ToDoOutputPort(todo={todo_id:TODOS[todo_id]})
 
 
 class ToDoDeleteInteractor(IUsecaseInteractor):
