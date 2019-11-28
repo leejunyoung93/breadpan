@@ -213,5 +213,7 @@ psd
 thumb
 sketch
 
-.vscode
+.vscode/
+.nodeids
+
 # End of https://www.gitignore.io/api/node,react,python
