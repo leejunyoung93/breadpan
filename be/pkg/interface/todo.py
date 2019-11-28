@@ -18,14 +18,14 @@ class ToDoController(IController):
         i.input(todo_id=todo_id, contents=contents)
         return i.operate()
 
-    def read(self, task_id):
+    def read(self, todo_id):
         i = ToDoReadInteractor()
-        i.input(task_id=task_id)
+        i.input(todo_id=todo_id)
         return i.operate()
 
-    def delete(self,  **kwargs):
+    def delete(self, todo_id):
         i = ToDoDeleteInteractor()
-        i.input(kwargs)
+        i.input(todo_id=todo_id)
         return i.operate()
 
     def update(self,  **kwargs):

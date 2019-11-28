@@ -27,15 +27,17 @@ class TestTodoApp(unittest.TestCase):
         self.assertEqual( t , {todo_id:contents} )
 
     def test_read(self):        
-        output = self.TodoCtrl.read(task_id='todo1')
+        output = self.TodoCtrl.read(todo_id='todo1')
         t = output.data["todo"]
         self.assertEqual( t, { 'todo1': {'task': 'build an API'} } )
-        
+
 
     def test_delete(self):
-        pass    
-
-
+        self.TodoCtrl.delete(todo_id='todo2')
+        try:
+            output = self.TodoCtrl.read(todo_id='todo2')
+        except:
+            self.assertTrue(True)
 
 if __name__ == '__main__':
     unittest.main()
