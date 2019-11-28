@@ -1,7 +1,6 @@
 from abc import *
 
-
-class IUsecaseInputPort:
+class IUsecaseInputPort(object):
     """Interface of use case input port.
 
     """
@@ -15,21 +14,26 @@ class IUsecaseInputPort:
             self.data[key] = value
 
 
+
+class IUsecaseInteractor(IUsecaseInputPort):
+    """IUsecaseInteractor
+
+    """
+    @abstractmethod
+    def operate(self):
+        """operate
+        Will return the class inherited from IUsecaseOutputPort.
+        """
+        pass
+
+
 class IUsecaseOutputPort(metaclass=ABCMeta):
     """Interface of use case input port.
 
     """
     data = {}
-    @classmethod
-    def output(cls, **kwargs):
+
+    def __init__(self, **kwargs):
         for key, value in kwargs.items():
             self.data[key] = value
-
-
-class IUseCaseInteractor(IUsecaseInputPort):
-    """IUseCaseInteractor
-
-    """
-
-    def operate(self) -> IUsecaseOutputPort:
-        return None
+    

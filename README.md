@@ -57,3 +57,6 @@ $ make build-fe # Front-end build
 ```
 
 
+```shell
+python -m unittest discover be_tests # Back-end test
+```

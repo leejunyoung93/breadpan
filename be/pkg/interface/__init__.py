@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from pkg.usecase import IUsecaseInputPort, IUsecaseOutputPort
+from be.pkg.usecase import IUsecaseOutputPort
 
 
 class IController(metaclass=ABCMeta):
@@ -23,7 +23,3 @@ class IController(metaclass=ABCMeta):
         pass
 
 
-class IPresentor(IUsecaseOutputPort):
-    @classmethod
-    def output(cls, **kwargs):
-        return cls.output(kwargs)
