@@ -17,12 +17,12 @@ class TestTodoApp(unittest.TestCase):
         contents = {'task': 'myid'}
         output = self.TodoCtrl.create(todo_id, contents)
         t = output.data["todo"]
-        self.assertEqual( t , {todo_id:contents} )
+        self.assertEqual(t ,{todo_id:contents} )
 
     def test_read(self):        
         output = self.TodoCtrl.read(todo_id='todo1')
         t = output.data["todo"]
-        self.assertEqual( t, { 'todo1': {'task': 'build an API'} } )
+        self.assertEqual(t,  {'todo1': {'task': 'build an API'} } )
 
 
     def test_delete(self):

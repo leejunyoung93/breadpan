@@ -1,4 +1,3 @@
-###
 
 import os
 import sys
@@ -7,7 +6,4 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 import breadpan
-
-from .entity import *
-from .usecase import *
-from .interface import *
+import todo

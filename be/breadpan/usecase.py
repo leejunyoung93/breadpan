@@ -20,7 +20,7 @@ class IUsecaseInteractor(IUsecaseInputPort):
 
     """
     @abstractmethod
-    def operate(self):
+    def run(self):
         """operate
         Will return the class inherited from IUsecaseOutputPort.
         """

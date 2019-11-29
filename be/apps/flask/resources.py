@@ -7,26 +7,29 @@
 
 from http import HTTPStatus
 from flask_restful import reqparse, abort, Resource
+from .context import todo
 
+todoCtrl = todo.ToDoController()
 
 def abort_if_todo_doesnt_exist(todo_id):
-    if todo_id not in TODOS:
+    try:
+        todoCtrl.read(todo_id)
+    except:
         abort(404, message="Todo {} doesn't exist".format(todo_id))
 
 
 parser = reqparse.RequestParser()
 parser.add_argument('task')
 
-
 class FlaskTodoController(Resource):
 
     def get(self, todo_id):
         abort_if_todo_doesnt_exist(todo_id)
-        return TODOS[todo_id], HTTPStatus.OK
+        return todoCtrl.read(todo_id), HTTPStatus.OK
 
     def delete(self, todo_id):
         abort_if_todo_doesnt_exist(todo_id)
-        del TODOS[todo_id]
+        todoCtrl.delete(todo_id)
         return '',  HTTPStatus.NO_CONTENT
 
     def put(self, todo_id):
