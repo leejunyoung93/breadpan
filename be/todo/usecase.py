@@ -25,6 +25,18 @@ class ToDoCreateInteractor(IUsecaseInteractor):
         # Link to output port
         return ToDoOutputPort(todo={todo_id:TODOS[todo_id]})
 
+class ToDoUpdateInteractor(IUsecaseInteractor):
+    def run(self):        
+        # Get id from the controller's data. 
+        todo_id = self.data["todo_id"]
+        contents = self.data["contents"]
+
+        # Store the data. 
+        TODOS[todo_id] = contents
+
+        # Link to output port
+        return ToDoOutputPort(todo={todo_id:TODOS[todo_id]})
+
 
 class ToDoReadInteractor(IUsecaseInteractor):
     def run(self):
@@ -33,6 +45,12 @@ class ToDoReadInteractor(IUsecaseInteractor):
 
         # Link to output port
         return ToDoOutputPort(todo={todo_id:TODOS[todo_id]})
+
+
+class ToDoReadAllInteractor(IUsecaseInteractor):
+    def run(self):
+        # Link to output port
+        return ToDoOutputPort(todo=TODOS)
 
 
 class ToDoDeleteInteractor(IUsecaseInteractor):

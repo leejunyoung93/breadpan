@@ -1,6 +1,6 @@
 from breadpan.interface import IController, IPresenter
 from breadpan.usecase import IUsecaseOutputPort, IUsecaseInteractor
-from todo.usecase import ToDoCreateInteractor, ToDoReadInteractor, ToDoDeleteInteractor
+from todo.usecase import ToDoCreateInteractor, ToDoUpdateInteractor, ToDoReadInteractor, ToDoDeleteInteractor, ToDoReadAllInteractor
 
 class ToDoPresenter(IPresenter):
     pass
@@ -16,10 +16,16 @@ class ToDoController(IController):
         i.input(todo_id=todo_id)
         return ToDoPresenter(i.run())
 
+    def read_all_data(self):
+        i = ToDoReadAllInteractor()
+        return ToDoPresenter(i.run())
+
     def delete(self, todo_id):
         i = ToDoDeleteInteractor()
         i.input(todo_id=todo_id)
         return ToDoPresenter(i.run())
 
-    def update(self,  **kwargs):
-        pass
+    def update(self, todo_id, contents):
+        i = ToDoUpdateInteractor()
+        i.input(todo_id=todo_id, contents=contents)
+        return ToDoPresenter(i.run())
