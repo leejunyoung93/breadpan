@@ -213,4 +213,7 @@ psd
 thumb
 sketch
 
+.vscode/
+.noseids
+
 # End of https://www.gitignore.io/api/node,react,python
