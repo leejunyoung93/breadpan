@@ -1,4 +1,4 @@
-import {call, put, takeEvery} from "redux-saga/effects";
+import {call, put, takeLatest} from "redux-saga/effects";
 import service from "service";
 
 
@@ -64,8 +64,10 @@ export function todoReducer(
                 ...state,
             };
         case GET_TODOS_SUCCESS:
+            const { todoData : todoList } = action;
             return {
                 ...state,
+                todoList
             };
         case GET_TODOS_FAILURE:
             return {
@@ -96,5 +98,5 @@ function* todoFunc() {
 };
 
 export function* todoSaga() {
-    yield takeEvery(GET_TODOS, todoFunc);
+    yield takeLatest(GET_TODOS, todoFunc);
 };

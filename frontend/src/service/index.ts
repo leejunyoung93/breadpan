@@ -19,12 +19,8 @@ class ResourceService extends Ajax {
   }
 }
 
-// const link = window.location.origin + "/";
-const link = "http://localhost:5000/";
-
+const link = "http://127.0.0.1:5000/";
 
 const host = `${link}`;
-
 const service = new ResourceService(host);
-
 export default service;

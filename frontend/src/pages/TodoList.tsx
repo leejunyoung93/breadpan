@@ -4,7 +4,7 @@ import { actions as todosActions } from "../modules/todo";
 import TodoList from "../components/TodoList";
 
 const mapStateToProps = state => ({
-    todoList : state.todoList
+    todoList : state.todo.todoList
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
