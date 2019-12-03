@@ -1,11 +1,11 @@
 // tslint:disable-next-line
-import { combineReducers } from "react-redux";
-import { tempReducer as temp } from "modules/temp";
+import { combineReducers } from "redux";
+import { todoReducer as todo } from "modules/todo";
 
 const createRootReducer = () =>
     combineReducers({
         // router: connectRouter(_history),
-        temp
+        todo
     });
 
 const rootReducer = createRootReducer();
